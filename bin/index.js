@@ -30,6 +30,12 @@ const argv = yargs
     'default': 'power-assert',
     type: 'string'
   })
+  .option('s', {
+    alias: 'sep',
+    description: 'word separator in URIs',
+    'default': '-',
+    type: 'string'
+  })
   .help('help')
   .demand(1)
   .version(pkg.version)
@@ -53,7 +59,7 @@ function execute(args) {
         reject(err);
       } else {
         const schema = JSON.parse(res);
-        generate(schema, {assert: args.assert, name: args.name}).then(code => {
+        generate(schema, {assert: args.assert, name: args.name, sep: args.sep}).then(code => {
           if (!args.output) {
             process.stdout.write(code);
             return resolve(code);

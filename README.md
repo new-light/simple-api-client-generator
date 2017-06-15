@@ -30,6 +30,7 @@ Usage: simple-api-client-generator [options] <JSON Schema>
 Options:
   -n, --name    API Client class name  [string] [default: "APIClient"]
   -o, --output  output file path  [string]
+  -s, --sep     word separator in URIs  [string] [default: "-"]
   --help        Show help  [boolean]
   --version     Show version number  [boolean]
 
@@ -42,7 +43,7 @@ Output Example is [here](./example/APIClient.js) from [Sample JSON Hyper Schema]
 
 ## Restriction
 
-### Depenencies 
+### Depenencies
 
 Generated Client depends on following modules.
 
